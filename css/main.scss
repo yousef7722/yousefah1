@@ -1,0 +1,134 @@
+*{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$loginColor1:#FDE686;
+$loginColor2:#EDC611;
+body{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  max-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+}
+.register{
+  height: 750px;
+  width: 350px;
+  position: relative;
+  background-color: $loginColor1;
+  overflow: hidden;
+  .up{
+    height: 100%;
+    padding: 20px;
+    position: relative;
+    .img{
+      position: absolute;
+      left: 0;
+      top: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      img{
+        width: 50%;
+        margin-bottom: 10px;
+      }
+      img:nth-child(1){rotate: -30deg;}
+      img:nth-child(2){rotate: 30deg;}
+      img:nth-child(3){rotate: 30deg;}
+      img:nth-child(4){rotate: -30deg;}
+    }
+    .option{
+      background-color: $loginColor2;
+      position: relative;
+      z-index: 2;
+      padding: 5px;
+      width: 100%;
+      display: flex;
+      border-radius: 30px;
+      span{
+        background-color: $loginColor1;
+        width: 50%;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 30px;
+        padding: 15px 0;
+        &.active{
+          background-color: $loginColor2;
+        }
+      }
+    }
+  }
+  .bot{
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
+    min-height: 50%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    >.icon{
+      width: 100%;
+      i{
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
+    .option{
+      font-weight: bold;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    form{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 15px;
+      input{
+        width: 100%;
+        padding: 20px;
+        border-radius: 14px;
+        border: 1px solid rgb(192, 192, 192);
+        &:focus-within{
+          outline: 1px solid green;
+        }
+      }
+      button{
+        width: 100%;
+        padding: 15px 0;
+        cursor: pointer;
+        border-radius: 14px;
+        border: none;
+        font-size: 15px;
+        background-color: $loginColor2;
+        font-weight: bold;
+      }
+    }
+    .more{
+      width: 100%;
+      padding: 25px 10px;
+      display: flex;
+      justify-content: space-between;
+      color: rgb(128, 128, 128);
+      p{
+        cursor: pointer;
+      }
+    }
+  }
+  .bot.signup{
+    display: none;
+  }
+}
