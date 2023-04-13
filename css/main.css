@@ -5,137 +5,301 @@
   padding: 0;
 }
 
-body {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  max-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  overflow: hidden;
+@media (max-width: 364px) {
+  :root {
+    font-size: 13px;
+  }
+}
+@media (min-width: 365px) {
+  :root {
+    font-size: 15px;
+  }
+}
+@media (min-width: 408px) {
+  :root {
+    font-size: 16px;
+  }
 }
 
-.register {
-  height: 750px;
-  width: 350px;
-  position: relative;
-  background-color: #FDE686;
-  overflow: hidden;
-}
-.register .up {
-  height: 100%;
-  padding: 20px;
-  position: relative;
-}
-.register .up .img {
-  position: absolute;
-  left: 0;
-  top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.register .up .img img {
-  width: 50%;
-  margin-bottom: 10px;
-}
-.register .up .img img:nth-child(1) {
-  rotate: -30deg;
-}
-.register .up .img img:nth-child(2) {
-  rotate: 30deg;
-}
-.register .up .img img:nth-child(3) {
-  rotate: 30deg;
-}
-.register .up .img img:nth-child(4) {
-  rotate: -30deg;
-}
-.register .up .option {
-  background-color: #EDC611;
-  position: relative;
-  z-index: 2;
-  padding: 5px;
+body {
   width: 100%;
-  display: flex;
-  border-radius: 30px;
+  height: 100vh;
+  background-color: #303030;
+  overflow-y: scroll;
 }
-.register .up .option span {
-  background-color: #FDE686;
-  width: 50%;
+body img {
+  display: flex;
+  max-width: 100%;
+}
+body button {
   cursor: pointer;
-  display: block;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 30px;
-  padding: 15px 0;
 }
-.register .up .option span.active {
-  background-color: #EDC611;
-}
-.register .bot {
-  position: absolute;
-  padding: 20px;
-  bottom: 0;
-  min-height: 50%;
-  width: 100%;
-  left: 0;
+
+.homepage {
+  font-family: "Roboto", sans-serif;
   background-color: white;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
 }
-.register .bot > .icon {
-  width: 100%;
+@media (max-width: 450px) {
+  .homepage {
+    width: 100%;
+  }
 }
-.register .bot > .icon i {
-  cursor: pointer;
-  font-size: 20px;
+@media (min-width: 451px) {
+  .homepage {
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+  }
 }
-.register .bot .option {
-  font-weight: bold;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-.register .bot form {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 15px;
-}
-.register .bot form input {
-  width: 100%;
+.homepage .p20 {
   padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgb(192, 192, 192);
 }
-.register .bot form input:focus-within {
-  outline: 1px solid green;
-}
-.register .bot form button {
-  width: 100%;
-  padding: 15px 0;
-  cursor: pointer;
-  border-radius: 14px;
-  border: none;
-  font-size: 15px;
-  background-color: #EDC611;
-  font-weight: bold;
-}
-.register .bot .more {
-  width: 100%;
-  padding: 25px 10px;
+.homepage .nav {
   display: flex;
   justify-content: space-between;
-  color: rgb(128, 128, 128);
+  align-items: center;
 }
-.register .bot .more p {
+.homepage .nav > .name {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+}
+.homepage .nav > .name i {
+  font-size: 1.35rem;
   cursor: pointer;
 }
-.register .bot.signup {
-  display: none;
+.homepage .nav > .imgs {
+  display: flex;
+  gap: 15px;
+}
+.homepage .nav > .imgs img {
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+.homepage .action {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.homepage .action button {
+  width: 26%;
+  padding: 5px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #E6E8E7;
+  border: none;
+  border-radius: 20px;
+}
+.homepage .action button.active {
+  background-color: #FBD536;
+}
+.homepage .options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 23px;
+}
+.homepage .options > div {
+  width: 46.5%;
+  aspect-ratio: 1.35;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1;
+  cursor: pointer;
+  padding: 17px;
+  padding-bottom: 13px;
+  border-radius: 14px;
+  box-shadow: -4px 4px 5px rgb(175, 175, 175);
+  font-size: 1.08rem;
+}
+.homepage .options > div img {
+  max-width: 60%;
+}
+.homepage .options .crypto {
+  padding-top: 0;
+  padding-left: 1px;
+  background-color: #FDE686;
+}
+.homepage .options .crypto p {
+  padding-left: 17px;
+}
+.homepage .options .bank {
+  padding-top: 10px;
+  background-color: #7678A6;
+}
+.homepage .options .social {
+  color: white;
+  background-color: #3B3561;
+}
+.homepage .options .social img {
+  width: 51%;
+}
+.homepage .options .games {
+  background-color: #78FECF;
+}
+.homepage .offersCon .order {
+  display: flex;
+  border-top: 1px solid rgb(211, 211, 211);
+  border-bottom: 1px solid rgb(211, 211, 211);
+  padding: 5px;
+  padding-left: 7px;
+  color: #303030;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.homepage .offersCon .order span:nth-child(1) {
+  width: 30%;
+}
+.homepage .offersCon .order span:nth-child(2) {
+  width: 30%;
+}
+.homepage .offersCon .order span:nth-child(3) {
+  width: 20%;
+}
+.homepage .offersCon .order span:nth-child(4) {
+  width: 20%;
+}
+.homepage .offersCon .offers {
+  margin-bottom: 73px;
+}
+.homepage .offersCon .offers .item {
+  display: flex;
+  margin-top: 10px;
+  padding: 6px;
+  padding-left: 7px;
+  padding-bottom: 10px;
+  height: 58px;
+  border-bottom: 1px solid rgba(255, 217, 0, 0.623);
+}
+@media (min-width: 363px) {
+  .homepage .offersCon .offers .item {
+    height: 63px;
+  }
+}
+.homepage .offersCon .offers .item > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.homepage .offersCon .offers .item .name {
+  width: 30%;
+}
+.homepage .offersCon .offers .item .name > span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.homepage .offersCon .offers .item .name > div {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(85, 85, 85);
+}
+.homepage .offersCon .offers .item .name > div img {
+  width: 9px;
+  height: 9px;
+}
+.homepage .offersCon .offers .item .title {
+  width: 30%;
+  font-weight: 500;
+}
+.homepage .offersCon .offers .item .title .t-title {
+  font-size: 0.92rem;
+  color: #535353;
+}
+.homepage .offersCon .offers .item .title .t-fee {
+  margin-left: 2px;
+  padding: 3px 6px;
+  font-size: 0.85rem;
+  color: rgb(85, 85, 85);
+  background-color: #ececec;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1px;
+}
+.homepage .offersCon .offers .item .fee {
+  width: 20%;
+}
+.homepage .offersCon .offers .item .fee > span {
+  padding-left: 5px;
+  font-size: 1rem;
+}
+.homepage .offersCon .offers .item .fee > div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.homepage .offersCon .offers .item .fee > div button {
+  background-color: #6C6D7F;
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.265rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: rgb(233, 233, 233);
+}
+.homepage .offersCon .offers .item .price {
+  width: 20%;
+}
+.homepage .offersCon .offers .item .price .p-price {
+  font-size: 1.15rem;
+}
+.homepage .offersCon .offers .item .price .p-price .currency {
+  font-size: 0.8rem;
+  color: rgb(0, 177, 0);
+}
+.homepage .offersCon .offers .item .price .bank button {
+  color: black;
+  background-color: #FBD536;
+}
+.homepage .offersCon .offers .item .price .pubg button {
+  color: black;
+  background-color: #78FECF;
+}
+.homepage .offersCon .offers .item .price > div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.homepage .offersCon .offers .item .price > div button {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  background-color: #3B3561;
+  border: none;
+  padding: 0.19rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  gap: 6px;
+  color: rgb(207, 207, 207);
+}
+.homepage .offersCon .offers .item .price > div button img {
+  width: 1rem;
+  height: 1rem;
+}
+.homepage .bar {
+  position: fixed;
+  left: 50%;
+  translate: -50%;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  justify-content: space-between;
+  background-color: white;
+  padding: 24px 30px;
+  box-shadow: 0px 0 5px rgb(214, 214, 214);
+}
+.homepage .bar img {
+  cursor: pointer;
+  width: 22px;
 }/*# sourceMappingURL=main.css.map */
